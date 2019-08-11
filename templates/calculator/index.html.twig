@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% if not result is defined %}
+    {% set result = '' %}
+{% endif %}
+
+{% block title %}Hello CalculatorController!{% endblock %}
+
+{% block body %}
+    <div>
+        Result: {{ result }}
+        <br><br>
+        {{ form_start(form, { 'attr': {'autocomplete': 'off'} }) }}
+        {{ form_errors(form) }}
+        {{ form_end(form) }}
+        <a href="{{ path('calculator') }}">Clear</a>
+    </div>
+{% endblock %}
